@@ -84,14 +84,18 @@ set(SRC_FILES
     src/config.c
     )
 
-set(LIBS curl ncurses pthread discord crypto ssl m)
+set(LIBS curl ncurses pthread discord crypto ssl m sqlite3)
 
 add_executable(moodle-score ${SRC_FILES} ${MAIN})
 
-file(GLOB STATIC_IMG
+file(GLOB STATIC_ASSETS
   "assets/**"
 )
-file(COPY ${STATIC_IMG} DESTINATION "${CMAKE_BINARY_DIR}/assets/")
+file(COPY ${STATIC_ASSETS} DESTINATION "${CMAKE_BINARY_DIR}/assets/")
+file(GLOB SQL_FILES
+  "sql/**"
+)
+file(COPY ${SQL_FILES} DESTINATION "${CMAKE_BINARY_DIR}/sql/")
 file(COPY "config.json" DESTINATION "${CMAKE_BINARY_DIR}")
 
 target_link_libraries(moodle-score ${LIBS})
