@@ -1,6 +1,7 @@
 build/
 orca/
 
+*.orig
 *.kdev4
 moodle-score-board.kdev
 
