@@ -3,7 +3,7 @@ import os
 import sys
 
 NO_LEAKS = "All heap blocks were freed -- no leaks are possible"
-TEST_EXEC_NAME = "build/moodle-score-tests"
+TEST_EXEC_NAME = "moodle-score-tests"
 
 VALGRIND_OPTS = "--leak-check=full --show-leak-kinds=all --track-fds=all"
 

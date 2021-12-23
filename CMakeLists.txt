@@ -114,4 +114,5 @@ if (CMAKE_BUILD_TYPE STREQUAL "TEST")
 
     enable_testing ()
     add_test(NAME moodle-score-tests COMMAND moodle-score-tests)
+		add_test(NAME moodle-score-tests-memcheck COMMAND python3 ${CMAKE_SOURCE_DIR}/mem_test.py)
 endif()
